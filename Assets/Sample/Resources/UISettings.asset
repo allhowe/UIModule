@@ -14,9 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabPath: Assets/Sample/Prefabs
   scriptPath: Assets/Sample/Scripts
-  uiRootName: UIRoot
   skipAnimation: 0
-  resident: 0
+  dontDestroyOnLoad: 0
   groups:
   - name: Default
     depth: 0

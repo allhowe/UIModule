@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace UIModule
 {
@@ -19,7 +20,7 @@ namespace UIModule
             }
         }
 
-        public static void Initialize(IUILoader loader)
+        public static void Initialize(IUILoader loader, GameObject root = null)
         {
             if (IsInitialized) 
                 return;
@@ -29,25 +30,36 @@ namespace UIModule
             Debug.Assert(loader != null, "[UI] ui loader is null.");
             Debug.Assert(settings != null, "[UI] ui settings is null.");
 
-            var async = Resources.LoadAsync<GameObject>(settings.uiRootName);
+
+            if (root != null)
+            {
+                Initialize(loader, settings, root);
+                return;
+            }
+
+            var rootName = UISettings.ROOT_NAME;
+            var async = Resources.LoadAsync<GameObject>(rootName);
             async.completed += a => {
-                Debug.Assert(async.asset != null, "[UI] ui root is null.");
-
                 var prefab = async.asset as GameObject;
-                var root = GameObject.Instantiate(prefab);
-
-                if (settings.resident)
-                {
-                   GameObject.DontDestroyOnLoad(root);
-                }
-
-                manager = new UIManager(root,loader,settings);
-
-                IsInitialized = true;
-
-                Initialized?.Invoke();
-                Initialized = null;
+                var root = Object.Instantiate(prefab);
+                root.name = rootName;
+                Initialize(loader, settings, root);
             };
+        }
+
+        private static void Initialize(IUILoader loader,UISettings settings, GameObject root)
+        {
+            if (settings.dontDestroyOnLoad)
+            {
+                Object.DontDestroyOnLoad(root);
+            }
+
+            manager = new UIManager(root, loader, settings);
+
+            IsInitialized = true;
+
+            Initialized?.Invoke();
+            Initialized = null;
         }
 
 

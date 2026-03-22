@@ -29,7 +29,7 @@
 
 ## 快速开始
 
-### 1. 创建配置
+### 1. 创建Settings/UIRoot
 
 在 `Resources` 文件夹下通过菜单 **Create → UIModule → Create UISettings Assets** 创建 `UISettings` 资产，配置：
 
@@ -42,12 +42,21 @@
 | `resident`        | UI Root 是否 DontDestroyOnLoad | `true`       |
 | `groups`          | UI 分组列表（名称 + 层级深度） | `Default(0)` |
 
+在工具栏中选择 **GameObject → UIModule → Root**，会在 `Hierarchy` 下创建一个 `UIRoot` 预制体。
+
 
 ### 2. 初始化
 
 ```csharp
-//`IUILoader` 接口实例（Addressables、YooAsset 等）,下方扩展部分提供了可选的资源加载器
-UIKit.Initialize(myLoader);
+// 创建UI加载器（DefaultUILoader/YooAssetUILoader/AddressblesUILoader) 或根据项目需求自定义加载器实现 IUILoader 接口
+var loader = new DefaultUILoader();
+
+//使用默认UIRoot
+UIKit.Initialize(loader);
+
+//使用自定义UIRoot
+var root = GameObject.Find("UIRoot");
+UIKit.Initialize(loader,root);
 
 // 可监听初始化完成回调
 UIKit.Initialized += () => Debug.Log("UI 系统就绪");
@@ -354,6 +363,10 @@ Initialize ──► Load ──► Open ──► Show ──► Shown
 ### YooAsset
 
 YooAsset 资源加载器。宏名称: `UIMODULE_YOOASSET`
+
+### Addressbles
+
+Addressbles 资源加载器。宏名称: `UIMODULE_ADDRESSBLES`
 
 ### UniTask
 

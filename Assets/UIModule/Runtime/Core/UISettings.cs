@@ -7,15 +7,14 @@ namespace UIModule
     public class UISettings : ScriptableObject
     {
         public const string PATH_SETTINGS = "UISettings";
+        public const string ROOT_NAME = "UIRoot";
 
 
         public string prefabPath = "Assets";
         public string scriptPath = "Assets";
         
-        public string uiRootName = "UIRoot";
-
         public bool skipAnimation = false;
-        public bool resident = true;
+        public bool dontDestroyOnLoad = true;
 
         public List<UIGroupInfo> groups = new() {
             new UIGroupInfo() { name = "Default", depth = 0 }
@@ -29,10 +28,9 @@ namespace UIModule
 
         public void Reset()
         {
-            resident = true;
+            dontDestroyOnLoad = true;
             prefabPath = "Assets";
             scriptPath = "Assets";
-            uiRootName = "UIRoot";
             skipAnimation = false;
             groups = new() { new UIGroupInfo() { name = "Default", depth = 0 } };
         }

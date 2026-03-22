@@ -34,7 +34,6 @@ namespace UIModule
             uis = new Dictionary<string, BaseUI>();
             pendingDestroys = new HashSet<BaseUI>();
 
-            root.name = settings.uiRootName;
             Camera = root.GetComponentInChildren<Camera>();
             templete = root.GetComponentInChildren<Canvas>();
             templete.gameObject.SetActive(false);

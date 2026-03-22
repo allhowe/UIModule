@@ -8,6 +8,20 @@ namespace UIModule
 {
     public class UIPanelWindow : EditorWindow
     {
+        [MenuItem("GameObject/UIModule/Root",priority=10)]
+        static void CreateRoot()
+        {
+            string prefabPath = "UIRoot";
+            var rootPrefab = Resources.Load<GameObject>(prefabPath);
+            GameObject uiRoot = PrefabUtility.InstantiatePrefab(rootPrefab) as GameObject;
+            uiRoot.name = rootPrefab.name;
+
+            EditorUtility.SetDirty(uiRoot);
+
+            Selection.activeGameObject = uiRoot;
+
+            Debug.Log($"Create UI Root：{uiRoot.name}");
+        }
 
         [MenuItem("Tools/UI Panel &u")]
         public static void ShowWindow()

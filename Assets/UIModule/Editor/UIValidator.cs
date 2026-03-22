@@ -10,6 +10,7 @@ using Object=UnityEngine.Object;
 
 namespace UIModule
 {
+
     public class UISettingsPostProcessor : AssetPostprocessor
     {
         private static void OnPostprocessAllAssets(string[] importedAssets, string[] deletedAssets,
