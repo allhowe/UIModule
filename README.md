@@ -37,9 +37,8 @@
 |-------------------|----------------------------|--------------|
 | `prefabPath`      | 预制体默认路径            | `Assets`     |
 | `scriptPath`      | 脚本默认路径               | `Assets`     |
-| `uiRootName`      | UIRoot Prefab 名称         | `UIRoot`     |
 | `skipAnimation`   | 是否跳过过渡动画           | `false`       |
-| `resident`        | UI Root 是否 DontDestroyOnLoad | `true`       |
+| `dontDestroyOnLoad`        | UI Root 是否 DontDestroyOnLoad | `true`       |
 | `groups`          | UI 分组列表（名称 + 层级深度） | `Default(0)` |
 
 在工具栏中选择 **GameObject → UIModule → Root**，会在 `Hierarchy` 下创建一个 `UIRoot` 预制体。
