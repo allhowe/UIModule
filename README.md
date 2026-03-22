@@ -48,7 +48,7 @@
 ### 2. 初始化
 
 ```csharp
-// 创建UI加载器（DefaultUILoader/YooAssetUILoader/AddressblesUILoader) 或根据项目需求自定义加载器实现 IUILoader 接口
+// 创建UI加载器（DefaultUILoader/YooAssetsUILoader/AddressblesUILoader) 或根据项目需求自定义加载器实现 IUILoader 接口
 var loader = new DefaultUILoader();
 
 //使用默认UIRoot
