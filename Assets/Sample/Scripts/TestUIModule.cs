@@ -13,13 +13,16 @@ public class TestUIModule : MonoBehaviour
 
     private void Start()
     {
-        UIKit.Initialize(new YooAssetsUILoader(), GameObject.Find("UIRoot"));
+        var loader = new YooAssetsUILoader();
+        var root = GameObject.Find("UIRoot");
 
         UIKit.Initialized += () => {
             UIKit.Manager.Events.OnChanged += (ui) => {
                 Debug.Log("GlobalUIEvent " + ui.Name + " " + ui.State);
             };
         };
+
+        UIKit.Initialize(loader, root);
     }
 
 
