@@ -1,0 +1,25 @@
+{
+    "name": "HUI.Addressbles",
+    "rootNamespace": "",
+    "references": [
+        "HUI",
+        "HUI.Addressbles"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [
+        "Editor"
+    ],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.unity.addressables",
+            "expression": "",
+            "define": "HUI_ADDRESSBLES"
+        }
+    ],
+    "noEngineReferences": false
+}

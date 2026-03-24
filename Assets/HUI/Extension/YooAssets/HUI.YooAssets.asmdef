@@ -1,0 +1,23 @@
+{
+    "name": "HUI.YooAssets",
+    "rootNamespace": "",
+    "references": [
+        "HUI",
+        "YooAsset"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.tuyoogame.yooasset",
+            "expression": "",
+            "define": "HUI_YOOASSET"
+        }
+    ],
+    "noEngineReferences": false
+}

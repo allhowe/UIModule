@@ -1,9 +1,9 @@
 using System;
-using UIModule;
+using HUI;
 using UnityEngine;
 
 
-public class TestUIModule : MonoBehaviour
+public class TestHUI : MonoBehaviour
 {
     private bool useQueue;
     private int queueId;

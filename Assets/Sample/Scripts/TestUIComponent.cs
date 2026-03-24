@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using UIModule;
+using HUI;
 using UnityEngine;
 
 public class TestUIComponent : BaseComponent<string>

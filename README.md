@@ -1,6 +1,6 @@
-# UIModule
+# HUI
 
-**UIModule** 是一个轻量级的 Unity UI 管理框架，提供完整的 UI 生命周期管理、分组层级控制、队列弹窗系统、事件通知机制以及组件化 UI 架构。
+**HUI** 是一个轻量级的 Unity UI 管理框架，提供完整的 UI 生命周期管理、分组层级控制、队列弹窗系统、事件通知机制以及组件化 UI 架构。
 
 它旨在解决 Unity 项目中常见的 UI 管理问题：
 
@@ -31,7 +31,7 @@
 
 ### 1. 创建Settings/UIRoot
 
-在 `Resources` 文件夹下通过菜单 **Create → UIModule → Create UISettings Assets** 创建 `UISettings` 资产，配置：
+在 `Resources` 文件夹下通过菜单 **Create → HUI → Create UISettings Assets** 创建 `UISettings` 资产，配置：
 
 | 字段              | 说明                       | 默认值       |
 |-------------------|----------------------------|--------------|
@@ -41,7 +41,7 @@
 | `dontDestroyOnLoad`        | UI Root 是否 DontDestroyOnLoad | `true`       |
 | `groups`          | UI 分组列表（名称 + 层级深度） | `Default(0)` |
 
-在工具栏中选择 **GameObject → UIModule → Root**，会在 `Hierarchy` 下创建一个 `UIRoot` 预制体。
+在工具栏中选择 **GameObject → HUI → Root**，会在 `Hierarchy` 下创建一个 `UIRoot` 预制体。
 
 
 ### 2. 初始化
@@ -361,15 +361,15 @@ Initialize ──► Load ──► Open ──► Show ──► Shown
 
 ### YooAsset
 
-YooAsset 资源加载器。宏名称: `UIMODULE_YOOASSET`
+YooAsset 资源加载器。宏名称: `HUI_YOOASSET`
 
 ### Addressbles
 
-Addressbles 资源加载器。宏名称: `UIMODULE_ADDRESSBLES`
+Addressbles 资源加载器。宏名称: `HUI_ADDRESSBLES`
 
 ### UniTask
 
-UniTask 适配器。宏名称: `UIMODULE_UNITASK`
+UniTask 适配器。宏名称: `HUI_UNITASK`
 
 ```csharp
 var ui = UIKit.OpenUI<TestUI>();
@@ -384,10 +384,10 @@ await ui.WaitCloseAsync();   // 等待关闭
 #### git安装
 需要一个支持git包路径查询参数的Unity版本. 
 
-你可以通过PackageManager `Add package from git URL`，添加 `https://github.com/allhowe/UIModule.git?path=Assets/UIModule`
+你可以通过PackageManager `Add package from git URL`，添加 `https://github.com/allhowe/HUI.git?path=Assets/HUI`
 
-或者在项目文件`Packages/manifest.json`，添加 `"com.howe.uimodule" : "https://github.com/allhowe/UIModule.git?path=Assets/UIModule"`。
+或者在项目文件`Packages/manifest.json`，添加 `"com.howe.hui" : "https://github.com/allhowe/HUI.git?path=Assets/HUI"`。
 
 #### 手动安装
 1. 下载或克隆本仓库。
-2. 将 `Assets/UIModule` 文件夹复制到你的 Unity 项目的 `Assets` 目录下。
+2. 将 `Assets/HUI` 文件夹复制到你的 Unity 项目的 `Assets` 目录下。

@@ -1,6 +1,6 @@
 using System;
 using TMPro;
-using UIModule;
+using HUI;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;

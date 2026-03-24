@@ -1,4 +1,4 @@
-using UIModule;
+using HUI;
 using UnityEngine;
 using UnityEngine.UI;
 
