@@ -14,12 +14,6 @@
     "precompiledReferences": [],
     "autoReferenced": true,
     "defineConstraints": [],
-    "versionDefines": [
-        {
-            "name": "com.unity.addressables",
-            "expression": "",
-            "define": "HUI_ADDRESSBLES"
-        }
-    ],
+    "versionDefines": [],
     "noEngineReferences": false
 }

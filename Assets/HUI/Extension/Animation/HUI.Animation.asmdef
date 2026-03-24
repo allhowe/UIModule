@@ -1,9 +1,8 @@
 {
-    "name": "HUI.YooAssets",
+    "name": "HUI.Animation",
     "rootNamespace": "",
     "references": [
-        "HUI",
-        "YooAsset"
+        "HUI"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

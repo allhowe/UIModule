@@ -30,10 +30,11 @@ namespace HUI
             var container = this;
             container.style.flexGrow = 1;
             container.style.marginTop = 10;
-            container.style.flexDirection = FlexDirection.Column;
 
-            // Header Section
+            // Statistics Section
             var headerContainer = new VisualElement();
+            headerContainer.style.flexShrink = 0;
+            headerContainer.style.flexGrow = 0;
             headerContainer.style.paddingLeft = 10;
             headerContainer.style.paddingRight = 10;
             headerContainer.style.paddingTop = 10;
@@ -54,7 +55,6 @@ namespace HUI
             title.style.marginBottom = 10;
             headerContainer.Add(title);
 
-            // Statistics Section
             var statsContainer = new VisualElement();
             statsContainer.name = "stats-container";
             statsContainer.style.flexDirection = FlexDirection.Row;
@@ -62,6 +62,7 @@ namespace HUI
             headerContainer.Add(statsContainer);
 
 
+            // Views Section
             var viewsContainer = new VisualElement();
             viewsContainer.style.paddingLeft = 10;
             viewsContainer.style.paddingRight = 10;
