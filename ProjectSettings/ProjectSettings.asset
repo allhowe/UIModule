@@ -760,7 +760,7 @@ PlayerSettings:
   webGLMemoryGeometricGrowthCap: 96
   webGLPowerPreference: 2
   scriptingDefineSymbols:
-    Standalone: UIMODULE_ADDRESSBLES;UIMODULE_YOOASSET;UIMODULE_UNITASK
+    Standalone: HUI_ADDRESSBLES;HUI_YOOASSET;HUI_UNITASK
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend: {}
