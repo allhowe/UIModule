@@ -111,7 +111,7 @@ namespace UIModule
             return Manager.OpenUI(uiName,type);
         }
 
-        public static T OpenUI<T,P>(P parameter) where T : BaseUI
+        public static T OpenUI<T,P>(P parameter) where T : BaseUI<P>
         {
             return OpenUI(typeof(T),parameter) as T;
         }

@@ -35,12 +35,12 @@ namespace UIModule
 
         private ToolbarToggle settingsTabButton;
         private ToolbarToggle generateTabButton;
-        private ToolbarToggle analyticTabButton;
+        private ToolbarToggle statisticsTabButton;
 
 
         private UISettingsTab settingsTab;
         private UIGenerateTab generateTab;
-        private UIAnalyticsTab analyticTab;
+        private UIStatisticsTab statisticsTab;
 
 
         public void CreateGUI()
@@ -78,7 +78,7 @@ namespace UIModule
             root.Add(tabTogglesContainer);
 
             settingsTabButton = CreateToggle(tabTogglesContainer, "Settings", () => SwitchToTab(0));
-            analyticTabButton = CreateToggle(tabTogglesContainer, "Analytic", () => SwitchToTab(1));
+            statisticsTabButton = CreateToggle(tabTogglesContainer, "Statistics", () => SwitchToTab(1));
             generateTabButton = CreateToggle(tabTogglesContainer, "Generate", () => SwitchToTab(2));
         }
 
@@ -112,9 +112,9 @@ namespace UIModule
             generateTab.Init(settings);
             tabContainer.Add(generateTab);
 
-            analyticTab = new UIAnalyticsTab();
-            analyticTab.Init(settings);
-            tabContainer.Add(analyticTab);
+            statisticsTab = new UIStatisticsTab();
+            statisticsTab.Init(settings);
+            tabContainer.Add(statisticsTab);
         }
 
         private void SwitchToTab(int tabIndex)
@@ -122,16 +122,17 @@ namespace UIModule
             EditorPrefs.SetInt("UISettingsWindow_LastTab", tabIndex);
 
             settingsTab.style.display = tabIndex == 0 ? DisplayStyle.Flex : DisplayStyle.None;
-            analyticTab.style.display = tabIndex == 1 ? DisplayStyle.Flex : DisplayStyle.None;
+            statisticsTab.style.display = tabIndex == 1 ? DisplayStyle.Flex : DisplayStyle.None;
             generateTab.style.display = tabIndex == 2 ? DisplayStyle.Flex : DisplayStyle.None;
 
             settingsTabButton.SetValueWithoutNotify(tabIndex == 0);
-            analyticTabButton.SetValueWithoutNotify(tabIndex == 1);
+            statisticsTabButton.SetValueWithoutNotify(tabIndex == 1);
             generateTabButton.SetValueWithoutNotify(tabIndex == 2);
 
             if (tabIndex == 1)
             {
-                analyticTab.RefreshViewInfos();
+                statisticsTab.RefreshStats();
+                statisticsTab.RefreshViews();
             }
         }
     }

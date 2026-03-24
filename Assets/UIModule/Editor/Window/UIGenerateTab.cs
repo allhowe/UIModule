@@ -45,10 +45,10 @@ namespace UIModule
 
             section.style.marginTop = 5;
             section.style.paddingTop = 10;
-            section.style.paddingLeft = 15;
-            section.style.paddingRight = 15;
-            section.style.paddingBottom = 15;
-            section.style.backgroundColor = new Color(0.2f, 0.2f, 0.2f, 0.3f);
+            section.style.paddingLeft = 10;
+            section.style.paddingRight = 10;
+            section.style.paddingBottom = 10;
+            section.style.backgroundColor = new Color(0.15f, 0.15f, 0.15f, 0.2f);
             section.style.borderTopLeftRadius = 5;
             section.style.borderTopRightRadius = 5;
             
@@ -141,7 +141,7 @@ namespace UIModule
             var dropdown = new DropdownField(choices, initialIndex);
             dropdown.style.flexGrow = 1;
             dropdown.style.flexShrink = 1;
-            dropdown.style.minWidth = 0;
+            dropdown.style.marginLeft = 0;
             dropdown.RegisterValueChangedCallback(evt => onValueChanged?.Invoke(dropdown.index));
             parent.Add(dropdown);
             return dropdown;
@@ -197,26 +197,23 @@ namespace UIModule
         {
             var container = new VisualElement();
             container.style.marginTop = 10;
-            container.style.marginLeft = 15;
-            container.style.marginRight = 15;
-            container.style.paddingTop = 8;
+            container.style.marginLeft = 10;
+            container.style.marginRight = 10;
+            container.style.paddingTop = 10;
             container.style.paddingLeft = 10;
             container.style.paddingRight = 10;
-            container.style.paddingBottom = 8;
-            container.style.backgroundColor = new Color(0.2f, 0.2f, 0.2f, 0.3f);
+            container.style.paddingBottom = 10;
             container.style.borderTopLeftRadius = 5;
             container.style.borderTopRightRadius = 5;
             container.style.borderBottomLeftRadius = 5;
             container.style.borderBottomRightRadius = 5;
-            container.style.borderBottomWidth = 1;
-            container.style.borderBottomColor = new Color(0.1f, 0.1f, 0.1f, 0.5f);
+            container.style.backgroundColor = new Color(0.15f, 0.15f, 0.15f, 0.2f);
 
             // Header Section (Fixed, not scrollable)
-            var title = new Label("UI Prefab & Code Generator");
+            var title = new Label("Generate");
             title.style.fontSize = 14;
             title.style.unityFontStyleAndWeight = FontStyle.Bold;
             title.style.marginBottom = 10;
-            title.style.marginLeft = 5;
             container.Add(title);
 
             var optionsContainer = new VisualElement();
@@ -224,7 +221,7 @@ namespace UIModule
             container.Add(optionsContainer);
 
 
-            CreateDropdownField(optionsContainer, new List<string>() { "Prefab Generator", "Code Generator", "BothGenerator" }, mode, index =>
+            CreateDropdownField(optionsContainer, new List<string>() { "Prefab Generator", "Code Generator", "All Generator" }, mode, index =>
             {
                 mode = index;
                 prefabSection.style.display = mode == 0 || mode == 2 ? DisplayStyle.Flex : DisplayStyle.None;
@@ -254,7 +251,6 @@ namespace UIModule
             generateBothButton.style.height = 25;
             generateBothButton.style.width = 120;
             generateBothButton.style.marginLeft = 10;
-            generateBothButton.style.marginRight = 10;
             optionsContainer.Add(generateBothButton);
 
             return container;
@@ -263,9 +259,8 @@ namespace UIModule
         private VisualElement CreateContent()
         {
             var container = new VisualElement();
-            container.style.marginTop = 10;
-            container.style.marginLeft = 15;
-            container.style.marginRight = 15;
+            container.style.marginLeft = 10;
+            container.style.marginRight = 10;
 
             // Settings Section
             prefabSection = CreateSection(container);
@@ -374,8 +369,8 @@ namespace UIModule
             var previewSection = new VisualElement();
             previewSection.style.flexGrow = 1;
             previewSection.style.paddingTop = 10;
-            previewSection.style.paddingLeft = 15;
-            previewSection.style.paddingRight = 15;
+            previewSection.style.paddingLeft = 10;
+            previewSection.style.paddingRight = 10;
             previewSection.style.paddingBottom = 10;
             previewSection.style.backgroundColor = new Color(0.15f, 0.15f, 0.15f, 0.5f);
             previewSection.style.borderBottomLeftRadius = 5;
