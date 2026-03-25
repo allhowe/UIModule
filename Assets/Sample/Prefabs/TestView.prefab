@@ -263,8 +263,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   setting:
-    group: 0
-    priority: 0
+    group: 2
+    priority: 2000
   EventTrigger_Image: {fileID: 6733605327558955574}
   BaseView_TestUIComponent: {fileID: 4964789372917298291}
   BaseView_TestUIComponent1: {fileID: 3225288466727247077}

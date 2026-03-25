@@ -362,7 +362,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   setting:
     group: 0
-    priority: 0
+    priority: -1000
 --- !u!114 &2986275835798555257
 MonoBehaviour:
   m_ObjectHideFlags: 0

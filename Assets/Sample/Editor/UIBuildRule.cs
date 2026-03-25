@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using HUI;
+using HUI.Editor;
 using UnityEditor;
 using UnityEngine;
 using ObjectBinderEditor;
