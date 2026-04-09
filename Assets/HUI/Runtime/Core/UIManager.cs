@@ -155,8 +155,6 @@ namespace HUI
 
         internal void ShowUI(BaseUI ui)
         {
-            pendingDestroys.Remove(ui);
-
             if (ui.State <= UIState.Load)
             {
                 ui.pending = ShowUI;
@@ -167,6 +165,7 @@ namespace HUI
                 return;
             }
 
+            pendingDestroys.Remove(ui);
             Groups.AddToGroup(ui);
             SetState(ui, UIState.Show);
             scheduler.Show(ui.View, () => SetState(ui, UIState.Shown));
