@@ -162,6 +162,7 @@ namespace HUI
             }
             if (ui.State == UIState.Show || ui.State == UIState.Shown || ui.State == UIState.Close)
             {
+                Debug.LogWarning($"[UI] {ui.Name} cannot show, current state is {ui.State}.");
                 return;
             }
 
