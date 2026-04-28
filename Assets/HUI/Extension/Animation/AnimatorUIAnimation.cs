@@ -6,6 +6,7 @@ namespace HUI.Extension
     using UnityEngine;
     using HUI;
     using System.Collections.Generic;
+    using UnityEngine.Scripting;
 
 #if UNITY_EDITOR
     using UnityEditor;
@@ -69,6 +70,7 @@ namespace HUI.Extension
 
 #endif
 
+    [Preserve]
     [DisallowMultipleComponent]
     [RequireComponent(typeof(Animator))]
     public class AnimatorUIAnimation : MonoBehaviour, IUIAnimation
