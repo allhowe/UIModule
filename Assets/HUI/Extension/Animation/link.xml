@@ -1,0 +1,3 @@
+﻿<linker>
+	<assembly fullname="HUI.Animation" preserve="all"/>
+</linker>
